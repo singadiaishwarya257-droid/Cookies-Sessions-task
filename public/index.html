@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harbor | Private workspace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="intro">
+        <div class="eyebrow"><span></span> Private by design</div>
+        <h1>Your work,<br /><em>anchored.</em></h1>
+        <p class="intro-copy">A quiet place for the things you are building. Sign in to enter your private workspace.</p>
+        <div class="signal"><span class="signal-dot"></span><span id="signal-text">Session protected</span></div>
+      </section>
+
+      <section class="panel" aria-live="polite">
+        <div class="panel-top"><div class="mark">H</div><span>HARBOR / 01</span></div>
+        <div id="auth-view">
+          <div class="panel-heading"><p class="kicker" id="form-kicker">Welcome back</p><h2 id="form-title">Sign in to Harbor</h2><p id="form-subtitle">Your next good idea is waiting.</p></div>
+          <form id="auth-form">
+            <label id="name-field" class="hidden">Your name<input name="name" type="text" autocomplete="name" /></label>
+            <label>Email address<input name="email" type="email" autocomplete="email" placeholder="you@company.com" required /></label>
+            <label>Password<input name="password" type="password" autocomplete="current-password" placeholder="6+ characters" required minlength="6" /></label>
+            <button type="submit" id="submit-button">Enter workspace <span>→</span></button>
+          </form>
+          <p class="form-message" id="form-message"></p>
+          <button class="text-button" id="mode-toggle" type="button">Need an account? <strong>Create one</strong></button>
+        </div>
+        <div id="account-view" class="hidden">
+          <div class="panel-heading"><p class="kicker">You are in</p><h2 id="account-title">Welcome</h2><p>Your session is active and your workspace is ready.</p></div>
+          <div class="account-card"><span class="account-icon">✦</span><div><span class="card-label">Signed in as</span><strong id="account-email"></strong></div></div>
+          <div class="session-detail"><span><i></i> Active session</span><span>Cookie secured</span></div>
+          <button class="signout-button" id="logout-button" type="button">Sign out <span>↗</span></button>
+        </div>
+        <p class="fine-print">By continuing, you agree to keep this space thoughtful.</p>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+:root { --ink: #18221e; --muted: #6d7972; --paper: #f3f1e9; --panel: #fbfaf6; --sage: #a5b8a0; --line: #dfe2d8; --accent: #d5673f; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; color: var(--ink); background: var(--paper); font-family: 'DM Sans', sans-serif; }
+body::before { content: ''; position: fixed; inset: 0; pointer-events: none; opacity: .28; background-image: linear-gradient(rgba(24,34,30,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(24,34,30,.035) 1px, transparent 1px); background-size: 36px 36px; }
+.shell { min-height: 100vh; display: grid; grid-template-columns: minmax(0, 1fr) minmax(400px, 500px); gap: clamp(50px, 9vw, 150px); align-items: center; max-width: 1240px; margin: auto; padding: 7vw; }
+.intro { animation: rise .7s ease both; }
+.eyebrow, .kicker, .panel-top, .card-label, .session-detail { text-transform: uppercase; letter-spacing: .13em; font-size: 11px; font-weight: 700; }
+.eyebrow { display: flex; align-items: center; gap: 10px; color: var(--accent); }
+.eyebrow span { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+h1, h2 { font-family: 'Space Grotesk', sans-serif; letter-spacing: 0; }
+h1 { max-width: 580px; margin: 30px 0 25px; font-size: clamp(4rem, 8vw, 7.5rem); line-height: .9; font-weight: 600; }
+h1 em { color: #708a72; font-style: normal; }
+.intro-copy { max-width: 320px; color: var(--muted); font-size: 16px; line-height: 1.6; }
+.signal { margin-top: 80px; display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 12px; }
+.signal-dot, .session-detail i { width: 7px; height: 7px; border-radius: 50%; background: #789c78; display: inline-block; box-shadow: 0 0 0 4px rgba(120,156,120,.14); }
+.panel { background: var(--panel); border: 1px solid rgba(24,34,30,.09); padding: 34px clamp(28px, 4vw, 54px) 30px; box-shadow: 0 18px 55px rgba(48,58,48,.08); animation: rise .7s .12s ease both; }
+.panel-top { display: flex; align-items: center; gap: 10px; color: #879188; border-bottom: 1px solid var(--line); padding-bottom: 24px; }
+.mark { display: grid; place-items: center; width: 28px; height: 28px; background: var(--ink); color: #e9ede4; font-family: 'Space Grotesk'; font-size: 15px; }
+.panel-heading { margin: 54px 0 30px; }
+.kicker { color: var(--accent); margin: 0 0 12px; }
+h2 { font-size: 32px; margin: 0 0 9px; }
+.panel-heading p:not(.kicker) { color: var(--muted); margin: 0; font-size: 14px; }
+form { display: grid; gap: 18px; }
+label { display: grid; gap: 8px; color: #47554d; font-size: 12px; font-weight: 700; }
+input { width: 100%; border: 1px solid var(--line); border-radius: 0; padding: 14px 15px; color: var(--ink); background: #fffefa; font: inherit; outline: 0; transition: border-color .2s, box-shadow .2s; }
+input:focus { border-color: var(--sage); box-shadow: 0 0 0 3px rgba(165,184,160,.24); }
+button { border: 0; font: inherit; cursor: pointer; }
+form button, .signout-button { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; padding: 16px 18px; background: var(--ink); color: white; font-weight: 700; }
+button span { font-size: 20px; font-weight: 400; }
+.text-button { display: block; margin: 24px auto 0; background: transparent; color: var(--muted); font-size: 12px; }
+.text-button strong { color: var(--ink); }
+.form-message { min-height: 18px; margin: 14px 0 0; color: var(--accent); font-size: 12px; }
+.account-card { display: flex; align-items: center; gap: 16px; padding: 17px; border: 1px solid var(--line); background: #fffefa; }
+.account-icon { display: grid; place-items: center; width: 36px; height: 36px; background: #dbe6d7; color: #587059; }
+.account-card div { display: grid; gap: 5px; }
+.account-card strong { font-size: 14px; }
+.card-label { color: var(--muted); font-size: 9px; }
+.session-detail { display: flex; justify-content: space-between; margin: 20px 0; color: var(--muted); font-size: 10px; }
+.session-detail span:first-child { display: flex; align-items: center; gap: 8px; color: #587059; }
+.fine-print { margin: 52px 0 0; color: #a0aaa2; text-align: center; font-size: 10px; }
+.hidden { display: none !important; }
+@keyframes rise { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 760px) { .shell { grid-template-columns: 1fr; gap: 45px; padding: 55px 24px; } h1 { font-size: clamp(3.7rem, 17vw, 6rem); } .signal { margin-top: 35px; } .panel { padding: 27px 24px 25px; } .panel-heading { margin-top: 38px; } }
